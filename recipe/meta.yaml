@@ -1,5 +1,5 @@
 {% set name = "taskipy" %}
-{% set version = "1.10.4" %}
+{% set version = "1.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0006429f708f530fc7add28ca51fd41f6c6e1fbe86763ff05125e1af3e8bdc7e
+  sha256: e3dd7c53f7c9c4fd17dc908b1037f545afc452907eb0953b84e91c0a9a9d809d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -24,9 +24,9 @@ requirements:
     - python
     - pip
     - poetry
-    - colorama >=0.4.4
     - __unix  # [unix]
     - __win   # [win]
+    - colorama >=0.4.4
     - mslex >=0.3.0  # [win]
     - psutil >=5.7.2
     - tomli >=2.0.1
