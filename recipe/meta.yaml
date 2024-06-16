@@ -1,5 +1,5 @@
 {% set name = "taskipy" %}
-{% set version = "1.12.2" %}
+{% set version = "1.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: eadfdc20d6bb94d8018eda32f1dbf584cf4aa6cffb71ba5cc2de20d344f8c4fb
+  sha256: 2b52f0257958fed151f1340f7de93fcf0848f7a358ad62ba05c31c2ca04f89fe
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
