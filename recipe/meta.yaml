@@ -19,11 +19,11 @@ requirements:
   host:
     - python
     - pip
-    - poetry
+    - poetry >=0.12  # should be replaced by poetry-core
+    - poetry-core
   run:
     - python
-    - pip
-    - poetry
+    - poetry >=0.12
     - __unix  # [unix]
     - __win   # [win]
     - colorama >=0.4.4
