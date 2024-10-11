@@ -28,7 +28,7 @@ requirements:
     - __win   # [win]
     - colorama >=0.4.4
     - mslex >=0.3.0  # [win]
-    - psutil >=5.7.2
+    - psutil >=5.7.2,<6.0.0
     - tomli >=2.0.1
 
 test:
