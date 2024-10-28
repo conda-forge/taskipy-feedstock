@@ -17,19 +17,19 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - poetry >=0.12  # should be replaced by poetry-core
     - poetry-core
   run:
-    - python
+    - python >=3.6
     - poetry >=0.12
     - __unix  # [unix]
     - __win   # [win]
-    - colorama >=0.4.4
-    - mslex >=0.3.0  # [win]
-    - psutil >=5.7.2
-    - tomli >=2.0.1
+    - colorama >=0.4.4,<5.0
+    - mslex >=1.1.0,<2.0  # [win]
+    - psutil >=5.7.2,<6.0
+    - tomli >=2.0.1,<3.0
 
 test:
   imports:
