@@ -1,13 +1,13 @@
 {% set name = "taskipy" %}
-{% set version = "1.14.0" %}
+{% set version = "1.14.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5d9631c29980481d59858f0a100ed3200cf7468ca8c0540ef19388586485532d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 410fbcf89692dfd4b9f39c2b49e1750b0a7b81affd0e2d7ea8c35f9d6a4774ed
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -26,15 +26,16 @@ requirements:
     - poetry >=0.12
     - __unix  # [unix]
     - __win   # [win]
-    - colorama >=0.4.4,<5.0
+    - colorama >=0.4.4
     - mslex >=1.1.0,<2.0  # [win]
-    - psutil >=5.7.2,<6.0
+    - psutil >=5.7.2,<7.0
     - tomli >=2.0.1,<3.0
 
 test:
   imports:
     - taskipy
   requires:
+    - python
     - pip
   commands:
     - pip check
