@@ -1,6 +1,5 @@
 {% set name = "taskipy" %}
 {% set version = "1.14.1" %}
-{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -23,7 +22,7 @@ requirements:
     - poetry >=0.12  # should be replaced by poetry-core
     - poetry-core
   run:
-    - python >={{ python_min }}
+    - python
     - poetry >=0.12
     - __unix  # [unix]
     - __win   # [win]
@@ -36,7 +35,7 @@ test:
   imports:
     - taskipy
   requires:
-    - python {{ python_min }}
+    - python
     - pip
   commands:
     - pip check
