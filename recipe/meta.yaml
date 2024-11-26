@@ -1,5 +1,6 @@
 {% set name = "taskipy" %}
 {% set version = "1.14.1" %}
+{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -17,24 +18,25 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - poetry >=0.12  # should be replaced by poetry-core
     - poetry-core
   run:
-    - python
+    - python >={{ python_min }}
     - poetry >=0.12
     - __unix  # [unix]
     - __win   # [win]
-    - colorama >=0.4.4,<5.0
+    - colorama >=0.4.4
     - mslex >=1.1.0,<2.0  # [win]
-    - psutil >=5.7.2,<6.0
+    - psutil >=5.7.2,<7.0
     - tomli >=2.0.1,<3.0
 
 test:
   imports:
     - taskipy
   requires:
+    - python {{ python_min }}
     - pip
   commands:
     - pip check
